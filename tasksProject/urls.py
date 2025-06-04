@@ -20,9 +20,10 @@ from rest_framework import routers
 
 from tasksProject.tasks import views
 
-
 router = routers.DefaultRouter()
 router.register(r"users", views.UserViewSet)
+router.register(r"tasks", views.TaskViewSet)
+router.register(r"user-tasks", views.Tasks_UserViewSet)
 
 urlpatterns = [
     path("", include(router.urls)),
