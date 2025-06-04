@@ -52,3 +52,5 @@ A Django REST API for managing tasks and assigning users to tasks.
 - `/user-tasks/` - Assign users to tasks
 
 API authentication is enabled via Django REST Framework's session authentication.
+
+Developped by Henrique Mirco, Igor Lacerda e Pedro Engel
