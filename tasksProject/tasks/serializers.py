@@ -19,3 +19,19 @@ class TaskUserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Task_User
         fields = "__all__"
+
+
+class TaskUserListSerializer(serializers.ModelSerializer):
+    userName = serializers.SerializerMethodField()
+
+    def get_userName(self, obj: Task_User):
+        return obj.user.username
+
+    taskTitle = serializers.SerializerMethodField()
+
+    def get_taskTitle(self, obj: Task_User):
+        return obj.task.titulo
+
+    class Meta:
+        model = Task_User
+        fields = ["user", "userName", "taskTitle", "hoursTaken"]
